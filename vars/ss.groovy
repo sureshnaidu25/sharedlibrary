@@ -10,5 +10,8 @@ def newBuild()
 
 def newDeploy("jobname","ipaddress","appname")
 {
-  sh 'scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ipadress}:/var/lib/tomcat9/webapps
+  sh 'scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ipadress}:/var/lib/tomcat9/webapps/${jobname}.war
+}
+
+def runSelenium("
 
