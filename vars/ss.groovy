@@ -8,7 +8,7 @@ def newBuild()
   sh 'mvn package'
 }
 
-def newDeploy(repo)
+def newDeploy("jobname","ipaddress","appname")
 {
-  
+  sh 'scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ipadress}:/var/lib/tomcat9/webapps
 
