@@ -1,17 +1,19 @@
 def newDownload(repo)
 {
-  https://github.com/intelliqittrainings/${repo}
+  git "https://github.com/intelliqittrainings/${repo}"
 }
 
 def newBuild()
 {
-  sh 'mvn package'
+  "sh 'mvn package'"
 }
 
-def newDeploy("jobname","ipaddress","appname")
+def newDeploy(jobname,ipaddress,appname)
 {
-  sh 'scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ipadress}:/var/lib/tomcat9/webapps/${jobname}.war
+  "sh 'scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ipadress}:/var/lib/tomcat9/webapps/${appname}.war"
 }
 
-def runSelenium("
-
+def runSelenium(appname)
+{
+  "sh 'java -jar /var/lib/jenkins/workspace/${jobname}/testing.jar"
+}
