@@ -5,15 +5,15 @@ def newDownload(repo)
 
 def newBuild()
 {
-  "sh 'mvn package'"
+  sh 'mvn package'
 }
 
 def newDeploy(jobname,ipaddress,appname)
 {
-  "sh 'scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ipadress}:/var/lib/tomcat9/webapps/${appname}.war"
+  sh "scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ipadress}:/var/lib/tomcat9/webapps/${appname}.war"
 }
 
 def runSelenium(appname)
 {
-  "sh 'java -jar /var/lib/jenkins/workspace/${jobname}/testing.jar"
+  sh "java -jar /var/lib/jenkins/workspace/${jobname}/testing.jar"
 }
